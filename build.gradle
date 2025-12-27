@@ -54,27 +54,3 @@ tasks.named('startShadowScripts') {
 tasks.build {
     dependsOn shadowJar
 }
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId = 'org.example'
-            artifactId = 'app2'
-            version = project.version
-
-            artifact(tasks.shadowJar) {
-                classifier = null
-            }
-        }
-    }
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/AuzhannSaaya/app2")
-            credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
-                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
-            }
-        }
-    }
-}
