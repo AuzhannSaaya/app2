@@ -13,7 +13,6 @@ targetCompatibility = '21'
 
 mainClassName = 'org.example.TodoApp'
 
-
 repositories {
     mavenCentral()
 }
@@ -78,3 +77,4 @@ publishing {
             }
         }
     }
+}

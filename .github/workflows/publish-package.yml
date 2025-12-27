@@ -1,5 +1,4 @@
 name: Publish to GitHub Packages (Maven)
-
 on:
   workflow_run:
     workflows: ["CI / Build & Release"]
